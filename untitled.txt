@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SUFYAN-X-IK | PREMIUM PROFILE</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    font-family: "Courier New", monospace;
+    color: #00ffe5;
+    text-align: center;
+    animation: bg 7s infinite alternate;
+}
+
+@keyframes bg {
+    0% { background-color: #000; }
+    100% { background-color: #001414; }
+}
+
+/* BIG GLOW TITLE */
+h1 {
+    font-size: 68px;
+    color: #00ffee;
+    margin-top: 40px;
+    text-shadow: 0 0 25px cyan, 0 0 55px #00ffe5, 0 0 90px #00ffe5;
+}
+
+/* BIG BOX */
+.big-box {
+    width: 90%;
+    margin: 40px auto;
+    padding: 30px;
+    border: 3px solid #00ffe5;
+    border-radius: 25px;
+    box-shadow: 0 0 35px cyan, 0 0 70px cyan;
+}
+
+/* TEXT */
+.info {
+    font-size: 32px;
+    margin: 15px 0;
+    text-shadow: 0 0 10px #00ffee;
+}
+
+/* WHATSAPP PANEL */
+.whatsapp-box {
+    background: #001f1f;
+    padding: 30px;
+    border-radius: 20px;
+    border: 3px solid #00ffbf;
+    box-shadow: 0 0 30px #00ffbf;
+}
+
+/* Blink */
+.blink {
+    font-size: 40px;
+    animation: blinker 1.5s infinite;
+}
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* HUGE FOOTER */
+.footer {
+    font-size: 36px;
+    margin-top: 50px;
+    padding: 20px;
+    text-shadow: 0 0 10px cyan, 0 0 25px cyan;
+}
+
+/* MATRIX RAIN EFFECT */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<h1>⚡ SUFYAN‑X‑IK ⚡</h1>
+
+<div class="big-box">
+    <p class="info">🏙️ CITY: <b>OKARA, PAKISTAN</b></p>
+    <p class="info">📞 CONTACT: <b>+92 302 9814756</b></p>
+    <p class="info">🔥 PASSION: TECH • HACKING INTEREST • CYBER STYLE</p>
+    <p class="info">💻 SKILLS: HTML • ANDROID SYSTEM • EDITING • SOCIAL EXPERT</p>
+    <p class="info">🎯 PERSONALITY: LOYAL • ATTITUDE • PREMIUM • SILENT KILLER</p>
+</div>
+
+<h1>⚡ ABOUT ME ⚡</h1>
+
+<div class="big-box">
+    <p class="info">
+        Main hoon <b>SUFYAN‑X‑IK</b> —  
+        woh banda jo kaam silent karta hai magar result full POWER detaa hai.  
+        Tech mera shoq, style meri pehchan, or attitude mera level.  
+        Har din apne aap ko upgrade karna — ye hi mera system hai 🔥
+    </p>
+</div>
+
+<h1>⚡ WHATSAPP ZONE ⚡</h1>
+
+<div class="big-box whatsapp-box">
+    <p class="info">📱 WhatsApp Status King</p>
+    <p class="info">💬 Fast Reply • Smart Talk • Premium Style</p>
+    <p class="info">🔒 Privacy Strong • Seen Mode ON • Attitude HIGH</p>
+    <p class="info">🟢 Online = Only for Special People</p>
+    <p class="info blink">⚡ SYSTEM ACTIVE ON WHATSAPP ⚡</p>
+</div>
+
+<h1>⚡ EXTRA POWER INFO ⚡</h1>
+
+<div class="big-box">
+    <p class="info">⭐ FUTURE GOAL: BIG CREATOR • TECH MASTER • OWN BRAND</p>
+    <p class="info">⭐ HOBBIES: EDITING • STYLING • SYSTEM CUSTOMIZING</p>
+    <p class="info">⭐ NATURE: NARAZ HO JAOON TO KHAMOSHI SABSE KHATARNAK</p>
+</div>
+
+<p class="footer">⚡ PREMIUM PROFILE BY SUFYAN‑X‑IK ⚡</p>
+
+<script>
+// MATRIX RAIN
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+let chars = "01SUFYANXIK#*@";
+chars = chars.split("");
+
+let drops = [];
+for (let i = 0; i < canvas.width / 20; i++) {
+    drops[i] = 1;
+}
+
+function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ffcc";
+    ctx.font = "20px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+        let text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * 20, drops[i] * 20);
+
+        if (drops[i] * 20 > canvas.height && Math.random() > 0.95) {
+            drops[i] = 0;
+        }
+        drops[i]++;
+    }
+}
+setInterval(draw, 50);
+</script>
+
+</body>
+</html>
